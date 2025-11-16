@@ -22,8 +22,8 @@ def load_cascades():
         st.error(f"Error: File cascade senyum tidak ditemukan di {smile_cascade_path}")
         return None, None
 
-    face_cascade = cv2.Classifier(face_cascade_path)
-    smile_cascade = cv2.Classifier(smile_cascade_path)
+    face_cascade = cv2.CascadeClassifier(face_cascade_path)
+    smile_cascade = cv2.CascadeClassifier(smile_cascade_path)
     
     return face_cascade, smile_cascade
 
