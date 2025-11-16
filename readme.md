@@ -14,11 +14,12 @@ Aplikasi dapat diakses pada: https://deteksi-smile-haarcascade.streamlit.app/
 Aplikasi ini menggunakan komponen `streamlit-webrtc` untuk mengakses kamera pengguna melalui browser. Setiap *frame* video dikirim ke server (tempat skrip Streamlit berjalan), diproses menggunakan logika OpenCV, dan dikirim kembali ke browser.
 
 1.  **Akuisisi Video:** `streamlit-webrtc` menangani pengambilan *frame* dari webcam pengguna.
-2.  **Konversi Grayscale:** Setiap *frame* dikonversi ke skala abu-abu (*grayscale*).
-3.  **Deteksi Wajah:** *Classifier* `haarcascade_frontalface_default.xml` diterapkan untuk menemukan lokasi wajah.
-4.  **Pembuatan ROI:** Untuk setiap wajah, dibuat *Region of Interest* (ROI).
-5.  **Deteksi Senyum:** *Classifier* `haarcascade_smile.xml` diterapkan **hanya di dalam ROI wajah** untuk efisiensi.
-6.  **Visualisasi:** Kotak pembatas dan label digambar pada *frame*, yang kemudian dikirim kembali ke browser pengguna.
+2.  **Penghitungan FPS:** Tepat di awal pemrosesan *frame*, program menghitung selisih waktu (`time.time()`) antara *frame* yang baru diterima dan *frame* sebelumnya. Hasilnya (1 dibagi selisih waktu) adalah nilai **Frames Per Second (FPS)**, yang menunjukkan seberapa cepat server memproses *loop* deteksi.
+3.  **Konversi Grayscale:** Setiap *frame* dikonversi ke skala abu-abu (*grayscale*).
+4.  **Deteksi Wajah:** *Classifier* `haarcascade_frontalface_default.xml` diterapkan untuk menemukan lokasi wajah.
+5.  **Pembuatan ROI:** Untuk setiap wajah, dibuat *Region of Interest* (ROI).
+6.  **Deteksi Senyum:** *Classifier* `haarcascade_smile.xml` diterapkan **hanya di dalam ROI wajah** untuk efisiensi.
+7.  **Visualisasi:** Nilai FPS, kotak pembatas, dan label deteksi digambar pada *frame*, yang kemudian dikirim kembali ke browser pengguna.
 
 ## 📦 Daftar Dependensi
 
