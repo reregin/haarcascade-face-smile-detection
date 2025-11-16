@@ -7,6 +7,8 @@ Proyek ini dibuat untuk pemenuhan tugas akhir kelas Sistem Multimedia (TIK3051A)
 2. Natalio Michael Tumuahi
 3. Regina Maria Samantha George
 
+Aplikasi dapat diakses pada: https://deteksi-smile-haarcascade.streamlit.app/
+
 ## ⚙️ Cara Kerja
 
 Aplikasi ini menggunakan komponen `streamlit-webrtc` untuk mengakses kamera pengguna melalui browser. Setiap *frame* video dikirim ke server (tempat skrip Streamlit berjalan), diproses menggunakan logika OpenCV, dan dikirim kembali ke browser.
